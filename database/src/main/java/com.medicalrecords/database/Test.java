@@ -25,11 +25,11 @@ public class Test extends BaseTest
         List<Physician> allPhysicians = findQuery.getResultList();
         Assert.assertNotEquals(0, allPhysicians.size());
 
-        Query findQuery2 = em.createQuery("select p from Patient p where p.firstName = John");
+        Query findQuery2 = em.createQuery("select p from Patient p where p.firstName = Ernest");
         List<Patient> allJohns = findQuery2.getResultList();
         Assert.assertNotEquals(0, allJohns.size());
 
-        Query findQuery3 = em.createQuery("select mr from MedicalRecord mr where mr.type = visit");
+        Query findQuery3 = em.createQuery("select mr from MedicalRecord mr where mr.type = test");
         List<MedicalRecord> allRecords = findQuery3.getResultList();
         Assert.assertEquals(0, allRecords.size());
     }
